@@ -198,6 +198,9 @@ async def get_messages(conversation_id: str, current_user: dict = Depends(get_cu
 async def health():
     return {"status": "ok"}
 
+@app.get("/")
+def read_root():
+    return {"message": "API is running 🚀"}
 
 @app.post("/api/ingest-all-dev")
 async def ingest_all_documents_dev():
